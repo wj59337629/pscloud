@@ -1,3 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_pscloud.training.lesson,pscloud.training.lesson,wjtest.model_lesson,,1,1,1,1
-access_pscloud.training.subject,pscloud.training.subject,wjtest.model_subject,,1,1,1,1
+access_pscloud.training.lesson,pscloud.training.lesson,wjtest.model_lesson,base.group_user,1,1,1,1
+access_pscloud.training.subject,pscloud.training.subject,wjtest.model_subject,base.group_user,1,1,1,1
