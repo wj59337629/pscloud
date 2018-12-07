@@ -8,7 +8,8 @@
     'category': 'Tools',
     'depends': ['base'],
     'data': [
-       
+       'views/res_partner_views.xml',
+        'views/training_lesson_views.xml',
     ],
     'demo': [
         
