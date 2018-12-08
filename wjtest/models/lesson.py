@@ -21,3 +21,11 @@ class TrainingLesson(models.Model):
     subject_id = fields.Many2one('pscloud.training.subject', string='科目')
     person_id = fields.Many2one('res.partner', related='subject_id.person_id', readonly=True)
     desc = fields.Text(string='描述')
+
+    @api.constraint('end_date','start_date')
+    def check_date(self):
+        for lesson in self:
+            if lesson.end_date < lesson.start_date
+            raise exceptions.ValidationError(u'开始时间不能晚于结束时间')
+            
+    
