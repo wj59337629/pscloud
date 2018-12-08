@@ -25,7 +25,7 @@ class TrainingLesson(models.Model):
     @api.constraint('end_date','start_date')
     def check_date(self):
         for lesson in self:
-            if lesson.end_date < lesson.start_date
-            raise exceptions.ValidationError(u'开始时间不能晚于结束时间')
+            if lesson.end_date < lesson.start_date:
+                raise exceptions.ValidationError(u'开始时间不能晚于结束时间')
             
     
