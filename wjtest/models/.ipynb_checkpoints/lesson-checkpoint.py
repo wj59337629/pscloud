@@ -22,7 +22,7 @@ class TrainingLesson(models.Model):
     person_id = fields.Many2one('res.partner', related='subject_id.person_id', readonly=True)
     desc = fields.Text(string='描述')
 
-    @api.constraint('end_date','start_date')
+    @api.constrains('end_date','start_date')
     def check_date(self):
         for lesson in self:
             if lesson.end_date < lesson.start_date:
