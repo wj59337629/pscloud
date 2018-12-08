@@ -16,6 +16,10 @@ class TrainingLesson(models.Model):
     start_date = fields.Date(string='开始时间')
     end_date = fields.Date(string='结束时间')
     continue_days = fields.Integer(string='持续天数', compute='_compute_days', store=True)
+     state = fields.Selection([
+        ('draft', '草稿'),
+        ('confirm', '确认'),
+        ], string='状态', readonly=True, copy=False, index=True, default='draft')
     seat_qty = fields.Integer(string='座位数')
     subject_id = fields.Many2one('pscloud.training.subject', string='科目')
     person_id = fields.Many2one('res.partner', related='subject_id.person_id', readonly=True)
